@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig'
-    # 'api'
+    'api.apps.ApiConfig',  # Add a comma here
+    'rest_framework',
+    # 'api'  # This can be commented out since 'api.apps.ApiConfig' is already included
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -136,9 +139,10 @@ SESSION_COOKIE_HTTPONLY = True
 # CSRF_COOKIE_HTTPONLY = True
 # SESSION_COOKIE_HTTPONLY = True
 
-STATICFILES_DIRS = (
-    BASE_DIR.joinpath('frontend', 'dist'),
-)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'build', 'static')]
+# STATICFILES_DIRS = (
+#     BASE_DIR.joinpath('frontend', 'dist'),
+# )
 
 # in case of older Django version
 # import os
