@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig'
+    'corsheaders',
+    'api.apps.ApiConfig',
     # 'api'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,6 +142,10 @@ STATICFILES_DIRS = (
     BASE_DIR.joinpath('frontend', 'dist'),
 )
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    # Add other origins if necessary
+]
 # in case of older Django version
 # import os
 # os.path.join instead of joinpath

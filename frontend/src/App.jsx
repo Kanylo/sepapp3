@@ -1,7 +1,6 @@
 import React from "react";
 import Cookies from "universal-cookie";
 
-//instantiating Cookies class by creating cookies object
 const cookies = new Cookies();
 
 class App extends React.Component {
@@ -13,6 +12,7 @@ class App extends React.Component {
       password: "",
       error: "",
       isAuthenticated: false,
+      isRegistering: false, // Add state for registration
     };
   }
 
@@ -20,29 +20,24 @@ class App extends React.Component {
     this.getSession();
   }
 
-// Get Session Method
   getSession = () => {
-    //// Make a GET request to the "/api/session/" URL with "same-origin" credentials
     fetch("/api/session/", {
       credentials: "same-origin",
     })
-    .then((res) => res.json()) //// Parse the response as JSON
+    .then((res) => res.json())
     .then((data) => {
-      console.log(data); // Log the response data to the console
-      //// If the response indicates the user is authenticated
+      console.log(data);
       if (data.isAuthenticated) {
-        this.setState({isAuthenticated: true}); // Update the component's state
-      } else {  // If the response indicates the user is not authenticated
-        this.setState({isAuthenticated: false}); // Update the component's state
+        this.setState({ isAuthenticated: true });
+      } else {
+        this.setState({ isAuthenticated: false });
       }
     })
-      //// Handle any errors that occurred during the fetch
     .catch((err) => {
       console.log(err);
     });
   }
-  
-//Who Am I method
+
   whoami = () => {
     fetch("/api/whoami/", {
       headers: {
@@ -60,11 +55,11 @@ class App extends React.Component {
   }
 
   handlePasswordChange = (event) => {
-    this.setState({password: event.target.value});
+    this.setState({ password: event.target.value });
   }
 
   handleUserNameChange = (event) => {
-    this.setState({username: event.target.value});
+    this.setState({ username: event.target.value });
   }
 
   isResponseOk(response) {
@@ -75,10 +70,8 @@ class App extends React.Component {
     }
   }
 
-  //Login Mthod
   login = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-     // Make a POST request to the "/api/login/" URL with the form data
+    event.preventDefault();
     fetch("/api/login/", {
       method: "POST",
       headers: {
@@ -86,20 +79,42 @@ class App extends React.Component {
         "X-CSRFToken": cookies.get("csrftoken"),
       },
       credentials: "same-origin",
-      body: JSON.stringify({username: this.state.username, password: this.state.password}),
+      body: JSON.stringify({ username: this.state.username, password: this.state.password }),
     })
     .then(this.isResponseOk)
     .then((data) => {
       console.log(data);
-      this.setState({isAuthenticated: true, username: "", password: "", error: ""});
+      this.setState({ isAuthenticated: true, username: "", password: "", error: "" });
     })
     .catch((err) => {
       console.log(err);
-      this.setState({error: "Wrong username or password."});
+      this.setState({ error: "Wrong username or password." });
     });
   }
 
-  //Logout Method
+  register = (event) => {
+    event.preventDefault();
+    fetch("/api/register/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": cookies.get("csrftoken"),
+      },
+      credentials: "same-origin",
+      body: JSON.stringify({ username: this.state.username, password: this.state.password }),
+    })
+      .then(this.isResponseOk)
+      .then((data) => {
+        console.log(data);
+        this.setState({ isAuthenticated: true, username: "", password: "", error: "" });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ error: "Registration failed." });
+      });
+  }
+  
+
   logout = () => {
     fetch("/api/logout", {
       credentials: "same-origin",
@@ -107,40 +122,70 @@ class App extends React.Component {
     .then(this.isResponseOk)
     .then((data) => {
       console.log(data);
-      this.setState({isAuthenticated: false});
+      this.setState({ isAuthenticated: false });
     })
     .catch((err) => {
       console.log(err);
     });
   };
 
+  toggleRegister = () => {
+    this.setState({ isRegistering: !this.state.isRegistering });
+  }
 
-  // UI Rendering using bootstrap 
   render() {
     if (!this.state.isAuthenticated) {
       return (
         <div className="container mt-3">
           <h1>Sepapp Auth</h1>
           <br />
-          <h2>Login</h2>
-          <form onSubmit={this.login}>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input type="text" className="form-control" id="username" name="username" value={this.state.username} onChange={this.handleUserNameChange} />
-            </div>
-            <div className="form-group">
-              <label htmlFor="username">Password</label>
-              <input type="password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.handlePasswordChange} />
-              <div>
-                {this.state.error &&
-                  <small className="text-danger">
-                    {this.state.error}
-                  </small>
-                }
-              </div>
-            </div>
-            <button type="submit" className="btn btn-primary">Login</button>
-          </form>
+          {this.state.isRegistering ? (
+            <>
+              <h2>Register</h2>
+              <form onSubmit={this.register}>
+                <div className="form-group">
+                  <label htmlFor="username">Username</label>
+                  <input type="text" className="form-control" id="username" name="username" value={this.state.username} onChange={this.handleUserNameChange} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                  <div>
+                    {this.state.error &&
+                      <small className="text-danger">
+                        {this.state.error}
+                      </small>
+                    }
+                  </div>
+                </div>
+                <button type="submit" className="btn btn-primary">Register</button>
+                <button type="button" className="btn btn-link" onClick={this.toggleRegister}>Already have an account? Login</button>
+              </form>
+            </>
+          ) : (
+            <>
+              <h2>Login</h2>
+              <form onSubmit={this.login}>
+                <div className="form-group">
+                  <label htmlFor="username">Username</label>
+                  <input type="text" className="form-control" id="username" name="username" value={this.state.username} onChange={this.handleUserNameChange} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                  <div>
+                    {this.state.error &&
+                      <small className="text-danger">
+                        {this.state.error}
+                      </small>
+                    }
+                  </div>
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="button" className="btn btn-link" onClick={this.toggleRegister}>Don't have an account? Register</button>
+              </form>
+            </>
+          )}
         </div>
       );
     }

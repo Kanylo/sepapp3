@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 
 @require_POST
 def login_view(request):
@@ -38,3 +40,19 @@ def whoami_view(request):
     if not request.user.is_authenticated:
         return JsonResponse({"isAuthenticated": False})
     return JsonResponse({"username":request.user.username})
+
+@csrf_exempt
+def register_view(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({'error': 'Username already exists.'}, status=400)
+
+        user = User.objects.create_user(username=username, password=password)
+        user.save()
+        return JsonResponse({'message': 'User registered successfully.'}, status=201)
+
+    return JsonResponse({'error': 'Invalid request method.'}, status=405)
