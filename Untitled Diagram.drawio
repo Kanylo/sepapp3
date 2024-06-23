@@ -1,193 +1,89 @@
-<mxfile host="app.diagrams.net" modified="2024-06-23T17:01:49.201Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" version="24.5.4" etag="d44wMoQj7txfkymctxh9" type="github">
-  <diagram name="Page-1" id="oB-3_I6lSAzf5ajEiZvS">
+<mxfile host="app.diagrams.net" modified="2024-06-23T17:36:35.044Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" version="24.5.4" etag="H7-xzEY05bMld1WlOvCR" type="github">
+  <diagram name="Page-1" id="ABK0qlNQWMwjMVvwtllY">
     <mxGraphModel>
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" value="" style="ellipse;fillColor=strokeColor;" vertex="1" parent="1">
-          <mxGeometry x="8" y="593" width="14" height="14" as="geometry" />
+        <mxCell id="2" value="Електронний переказ" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="28" y="654" width="294" height="168" as="geometry" />
         </mxCell>
-        <mxCell id="3" value="Registration" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;startSize=25;container=0;collapsible=0;rounded=1;arcSize=14;dropTarget=0;" vertex="1" parent="1">
-          <mxGeometry x="57" y="142" width="1022" height="678" as="geometry" />
+        <mxCell id="3" value="Вказати отримувача та суму" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="63" y="679" width="224" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="4" value="Enter personal details&#xa;Enter payment details" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="112" y="295" width="253" height="66" as="geometry" />
+        <mxCell id="4" value="Підтвердження операції" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="78" y="763" width="195" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="5" value="Verify email" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="728" y="430" width="102" height="34" as="geometry" />
+        <mxCell id="5" value="Аутентифікація" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="11" y="436" width="328" height="168" as="geometry" />
         </mxCell>
-        <mxCell id="6" value="Upload identification documents" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="619" y="583" width="250" height="34" as="geometry" />
+        <mxCell id="6" value="Введення і перевірка пароля" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="61" y="461" width="230" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="Payment" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;startSize=25;container=0;collapsible=0;rounded=1;arcSize=14;dropTarget=0;" vertex="1" parent="1">
-          <mxGeometry x="77" y="167" width="507" height="628" as="geometry" />
+        <mxCell id="7" value="Підтвердження особистих даних" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="46" y="545" width="258" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="8" value="Input payment details" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1112" y="142" width="264" height="347" as="geometry" />
+        <mxCell id="8" value="Реєстрація" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry y="109" width="351" height="277" as="geometry" />
         </mxCell>
-        <mxCell id="9" value="User inputs personal info" style="align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="1147" y="192" width="194" height="34" as="geometry" />
+        <mxCell id="9" value="Створення облікового запису" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="59" y="134" width="233" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="10" value="Email confirmation process" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1104" y="558" width="280" height="84" as="geometry" />
+        <mxCell id="10" value="Підтвердження електронної адреси" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="35" y="243" width="281" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="11" value="Email confirmation process" style="align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="1139" y="583" width="210" height="34" as="geometry" />
+        <mxCell id="11" value="Заповнення особистих даних" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="327" width="231" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="12" value="Verification of ID documents" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1099" y="711" width="290" height="109" as="geometry" />
+        <mxCell id="12" value="Технічне завдання" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="371" width="323" height="193" as="geometry" />
         </mxCell>
-        <mxCell id="13" value="Verification of ID documents" style="align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="1134" y="736" width="220" height="34" as="geometry" />
+        <mxCell id="13" value="Система електронних переказів" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="406" y="134" width="253" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="14" value="Select payment method" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="146" y="192" width="186" height="34" as="geometry" />
+        <mxCell id="14" value="Алгоритм" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="479" y="25" width="86" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="15" value="Confirm payment" style="rounded=1;absoluteArcSize=1;arcSize=14;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="257" y="736" width="140" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="16" value="Choose from available methods" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="83" y="8" width="310" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="17" value="Choose from available methods" style="align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="118" y="33" width="240" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="18" value="Input payment details" style="align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="1157" y="430" width="173" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="19" value="Payment confirmation process" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="176" y="870" width="302" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="20" value="Payment confirmation process" style="align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="211" y="895" width="232" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="21" value="Continue" style="curved=1;startArrow=none;;exitX=0.5;exitY=0.99;entryX=0;entryY=0.34;" edge="1" parent="1" source="4" target="5">
+        <mxCell id="15" value="" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.55;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="14" target="13">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="239" y="395" />
+              <mxPoint x="532" y="84" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="22" value="Email verified" style="curved=1;startArrow=none;;exitX=0.36;exitY=0.99;entryX=0.5;entryY=-0.01;" edge="1" parent="1" source="5" target="6">
+        <mxCell id="16" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.17;exitY=1;entryX=0.98;entryY=0;" edge="1" parent="1" source="14" target="9">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="744" y="489" />
+              <mxPoint x="451" y="84" />
+              <mxPoint x="451" y="109" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="23" value="" style="curved=1;dashed=1;startArrow=none;endArrow=none;exitX=0.5;exitY=1;entryX=1;entryY=0.37;" edge="1" parent="1" source="9" target="4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1244" y="261" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="24" value="" style="curved=1;dashed=1;startArrow=none;endArrow=none;exitX=1;exitY=0.89;entryX=0;entryY=0.06;" edge="1" parent="1" source="5" target="11">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="936" y="489" />
-              <mxPoint x="936" y="558" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="25" value="" style="curved=1;dashed=1;startArrow=none;endArrow=none;exitX=0.5;exitY=0.99;entryX=0;entryY=0.21;" edge="1" parent="1" source="6" target="13">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="744" y="711" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="26" value="Retry" style="curved=1;startArrow=none;;exitX=1;exitY=0.11;entryX=1;entryY=0.88;" edge="1" parent="1" source="4" target="4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="401" y="295" />
-              <mxPoint x="410" y="295" />
-              <mxPoint x="420" y="328" />
-              <mxPoint x="410" y="361" />
-              <mxPoint x="401" y="361" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="27" value="Resend email" style="curved=1;startArrow=none;;exitX=1;exitY=0.32;entryX=1;entryY=0.66;" edge="1" parent="1" source="5" target="5">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="930" y="430" />
-              <mxPoint x="955" y="430" />
-              <mxPoint x="979" y="447" />
-              <mxPoint x="955" y="464" />
-              <mxPoint x="930" y="464" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="28" value="Re-upload documents" style="curved=1;startArrow=none;;exitX=1;exitY=0.17;entryX=1;entryY=0.8;" edge="1" parent="1" source="6" target="6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="944" y="583" />
-              <mxPoint x="962" y="583" />
-              <mxPoint x="981" y="600" />
-              <mxPoint x="962" y="617" />
-              <mxPoint x="944" y="617" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="29" value="Method selected" style="curved=1;startArrow=none;;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="14" target="4">
+        <mxCell id="17" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="9" target="10">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="30" value="Details entered" style="curved=1;startArrow=none;;exitX=0.36;exitY=0.99;entryX=0.04;entryY=-0.01;" edge="1" parent="1" source="4" target="15">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="167" y="395" />
-              <mxPoint x="167" y="711" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="31" value="" style="curved=1;dashed=1;startArrow=none;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="17" target="14">
+        <mxCell id="18" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="10" target="11">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="32" value="" style="curved=1;dashed=1;startArrow=none;endArrow=none;exitX=0.86;exitY=0.99;entryX=0;entryY=0.32;" edge="1" parent="1" source="4" target="18">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="427" y="395" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="33" value="" style="curved=1;dashed=1;startArrow=none;endArrow=none;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;" edge="1" parent="1" source="15" target="20">
+        <mxCell id="19" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="11" target="6">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="34" value="Change method" style="curved=1;startArrow=none;;exitX=1;exitY=0.25;entryX=1;entryY=0.75;" edge="1" parent="1" source="14" target="14">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="421" y="192" />
-              <mxPoint x="443" y="192" />
-              <mxPoint x="465" y="209" />
-              <mxPoint x="443" y="226" />
-              <mxPoint x="421" y="226" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="35" value="Update details" style="curved=1;startArrow=none;;exitX=1;exitY=0.22;entryX=1;entryY=0.78;" edge="1" parent="1" source="4" target="4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="463" y="295" />
-              <mxPoint x="487" y="295" />
-              <mxPoint x="512" y="328" />
-              <mxPoint x="487" y="361" />
-              <mxPoint x="463" y="361" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="36" value="" style="curved=1;startArrow=none;;" edge="1" parent="1" source="2" target="3">
+        <mxCell id="20" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="6" target="7">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="37" value="Documents uploaded" style="curved=1;startArrow=none;;" edge="1" parent="1" source="6" target="7">
+        <mxCell id="21" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="7" target="3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="3" target="4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
